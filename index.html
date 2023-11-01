@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Age Countdown</title>
+  <script>
+    function updateCountdown() {
+      var targetDate = new Date("2027-01-06"); // Specify your target date here
+
+      var now = new Date();
+
+      var timeRemaining = targetDate - now;
+
+      var seconds = Math.floor((timeRemaining / 1000) % 60);
+      var minutes = Math.floor((timeRemaining / 1000 / 60) % 60);
+      var hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
+      var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+
+      document.getElementById('days').innerHTML = days;
+      document.getElementById('hours').innerHTML = hours;
+      document.getElementById('minutes').innerHTML = minutes;
+      document.getElementById('seconds').innerHTML = seconds;
+    }
+
+    setInterval(updateCountdown, 1000); // Update every second
+  </script>
+  <style>
+    
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+  }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+      background-attachment: fixed;
+
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+      color: #FF6A00;
+      font-size: 36px;
+    }
+
+    p {
+      text-align: center;
+      color: #333;
+    }
+
+    #countdown {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+      font-size: 24px;
+      color: #FF6A00;
+    }
+
+    #countdown span {
+      font-size: 40px;
+      padding: 5px;
+      background-color: #333;
+      color: #fff;
+      margin: 0 5px;
+      border-radius: 5px;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+  <script>
+    // JavaScript code goes here
+  </script>
+</head>
+<body>
+  <video autoplay loop muted>
+    <source src="/cod.mp4" type="video/mp4">
+    <!-- You can add multiple source elements for different video formats -->
+    <!-- <source src="your-video.webm" type="video/webm"> -->
+    Your browser does not support the video tag.
+</video>
+  <h1>Time remeaning for becoming 21</h1>
+  <!-- <p>Countdown until a specified date:</p> -->
+  <div id="countdown">
+    <span id="days"></span> days,
+    <span id="hours"></span> hours,
+    <span id="minutes"></span> minutes,
+    <span id="seconds"></span> seconds
+  </div>
+</head>
+<body>
+
+</body>
+</html>
